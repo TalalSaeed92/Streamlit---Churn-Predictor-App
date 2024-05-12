@@ -1,13 +1,14 @@
 import streamlit as st
 import pandas as pd
-from joblib import load
-import dill
+import dill  # Use dill for both load and dump
 
 # Load the pretrained model
 with open('pipeline.pkl', 'rb') as file:
     model = dill.load(file)
 
-my_feature_dict = load('my_feature_dict.pkl')
+# Load the feature dictionary using dill
+with open('my_feature_dict.pkl', 'rb') as file:
+    my_feature_dict = dill.load(file)
 
 # Function to predict churn
 def predict_churn(data):
@@ -47,5 +48,3 @@ if st.button('Predict'):
     st.write(f'The Prediction is **{prediction}**, Hence Employee is **{prediction_translate}** to churn.')
 
 st.subheader('Created by Muhammad Talal Saeed')
-
-

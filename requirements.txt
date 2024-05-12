@@ -1,3 +1,5 @@
-altair
-pandas
-streamlit
+streamlit==1.23.4  # Replace with your actual version
+pandas==2.0.1     # Replace with your actual version
+joblib==1.3.2     # Replace with your actual version
+dill==0.3.7       # Replace with your actual version
+# ... other libraries with versions 

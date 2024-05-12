@@ -1,4 +1,4 @@
-# Welcome to Streamlit!
+# Welcome to My Streamlit App for Employee Churn Predictor!
 
 Edit `/streamlit_app.py` to customize this app to your heart's desire. :heart:
 

@@ -10,6 +10,11 @@ with open('pipeline.pkl', 'rb') as file:
 # Load the feature dictionary 
 with open('my_feature_dict.pkl', 'rb') as f:
     my_feature_dict = dill.load(f)
+    
+git add .   # Add all files in the directory
+git commit -m "Add pipeline.pkl and other project files"    
+
+git push origin master     
 
 # Function to predict churn
 def predict_churn(data):

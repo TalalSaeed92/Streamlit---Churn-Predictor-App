@@ -7,7 +7,9 @@ import dill
 with open('pipeline.pkl', 'rb') as file:
     model = dill.load(file)
 
-my_feature_dict = load('my_feature_dict.pkl')
+# Load the feature dictionary 
+with open('my_feature_dict.pkl', 'rb') as f:
+    my_feature_dict = dill.load(f)
 
 # Function to predict churn
 def predict_churn(data):
@@ -23,9 +25,6 @@ categorical_input = my_feature_dict.get('CATEGORICAL')
 categorical_input_vals = {}
 for i, col in enumerate(categorical_input.get('Column Name').values()):
     categorical_input_vals[col] = st.selectbox(col, categorical_input.get('Members')[i])
-
-# Load numerical features
-numerical_input = my_feature_dict.get('NUMERICAL')
 
 # Display numerical features
 st.subheader('Numerical Features')
@@ -47,4 +46,3 @@ if st.button('Predict'):
     st.write(f'The Prediction is **{prediction}**, Hence Employee is **{prediction_translate}** to churn.')
 
 st.subheader('Created by Muhammad Talal Saeed')
-
